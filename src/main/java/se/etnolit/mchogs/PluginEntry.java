@@ -23,3 +23,11 @@ public class PluginEntry extends JavaPlugin {
         getLogger().info("onDisable called!");
     }
 }
+
+public class CommandKit implements CommandExecutor {
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        return false;
+    }
+}
