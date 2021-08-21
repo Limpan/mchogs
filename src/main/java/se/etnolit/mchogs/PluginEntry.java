@@ -16,6 +16,8 @@ public class PluginEntry extends JavaPlugin {
         this.saveDefaultConfig();
 
         getLogger().info("onEnable called!");
+
+        this.getCommand("cake").setExecutor(new CommandCake());
     }
 
     @Override
@@ -24,10 +26,3 @@ public class PluginEntry extends JavaPlugin {
     }
 }
 
-public class CommandKit implements CommandExecutor {
-
-    @Override
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        return false;
-    }
-}
