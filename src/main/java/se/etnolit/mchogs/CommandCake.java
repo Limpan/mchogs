@@ -17,6 +17,9 @@ public class CommandCake implements CommandExecutor {
             ItemStack cake = new ItemStack(Material.CAKE, 1);
 
             player.getInventory().addItem(cake);
+        } else {
+            sender.sendMessage("Only players can have cake!");
+            return false;
         }
 
         return true;

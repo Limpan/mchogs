@@ -1,0 +1,12 @@
+main: se.etnolit.mchogs:HOGS
+name: MC-HOGS
+version: 1.0
+commands:
+  cake:
+    description: Everybody likes cake
+    usage: /cake
+    permission: mchogs.cake
+permissions:
+  mchogs.cake:
+    description: Allows you to get cake.
+    default: true
