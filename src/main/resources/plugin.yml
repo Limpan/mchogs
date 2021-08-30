@@ -1,6 +1,8 @@
-main: se.etnolit.mchogs:HOGS
+main: se.etnolit.mchogs.HogsPlugin
 name: MC-HOGS
 version: 1.0
+author: Linus Törngren
+description: Plugin for private H.O.G.S. server.
 commands:
   cake:
     description: Everybody likes cake
