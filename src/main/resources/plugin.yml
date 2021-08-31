@@ -3,6 +3,7 @@ name: MC-HOGS
 version: 1.0
 author: Linus Törngren
 description: Plugin for private H.O.G.S. server.
+api-version: 1.17
 commands:
   cake:
     description: Everybody likes cake
