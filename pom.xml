@@ -25,7 +25,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-
 	        <dependency>
 	            <groupId>com.google.guava</groupId>
 	            <artifactId>guava</artifactId>
@@ -90,6 +89,7 @@
                     <encoding>${project.build.sourceEncoding}</encoding>
                 </configuration>
 			</plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
@@ -116,10 +116,12 @@
                     </execution>
                 </executions>
             </plugin>
+
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
 			</plugin>
+
             <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
@@ -130,22 +132,29 @@
                             <goal>prepare-agent</goal>
                         </goals>
                     </execution>
-<!--
 
                     <execution>
-                        <id>report</id>
+                        <id>jacoco-report</id>
                         <phase>test</phase>
                         <goals>
                             <goal>report</goal>
                         </goals>
                     </execution>
--->
                 </executions>
             </plugin>
+
             <plugin>
                 <groupId>org.eluder.coveralls</groupId>
                 <artifactId>coveralls-maven-plugin</artifactId>
                 <version>4.3.0</version>
+                <dependencies>
+                    <!-- Work around missing javax/xml/bind/DataTypeConverter -->
+                    <dependency>
+                      <groupId>javax.xml.bind</groupId>
+                      <artifactId>jaxb-api</artifactId>
+                      <version>2.3.1</version>
+                    </dependency>
+                </dependencies>
             </plugin>
 		</plugins>
 	</build>
