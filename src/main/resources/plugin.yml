@@ -9,7 +9,14 @@ commands:
     description: Everybody likes cake
     usage: /cake
     permission: mchogs.cake
+  hogs:
+    description: Custom HOGS controls
+    usage: /hogs
+    permission: mchogs.admin
 permissions:
   mchogs.cake:
     description: Allows you to get cake.
+    default: true
+  mchogs.admin:
+    description: Allows control for HOGS custom controls.
     default: true

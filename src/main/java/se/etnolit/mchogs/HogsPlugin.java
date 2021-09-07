@@ -1,5 +1,8 @@
 package se.etnolit.mchogs;
 
+import java.lang.System.Logger;
+import java.util.UUID;
+
 import javax.inject.Inject;
 
 import com.google.inject.Injector;
@@ -18,7 +21,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class HogsPlugin extends JavaPlugin {
     
     @Inject private CommandCake commandCake;
-    @Inject private PlaceVillagerListener placeVillagerListener;
+    @Inject private CommandHOGS commandHOGS;
+    @Inject private GreeterListener greeterListener;
+    
+//    public UUID greeterUUID;
 
     public HogsPlugin() {
         BinderModule module = new BinderModule(this);
@@ -28,18 +34,15 @@ public class HogsPlugin extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        
+        this.saveDefaultConfig();
     }
 
     @Override
     public void onEnable() {
-
-        this.saveDefaultConfig();
-
-        
         this.getCommand("cake").setExecutor(this.commandCake);
+        this.getCommand("hogs").setExecutor(this.commandHOGS);
 
-        this.getServer().getPluginManager().registerEvents(this.placeVillagerListener, this);
+        this.getServer().getPluginManager().registerEvents(this.greeterListener, this);
     }
 
     @Override
